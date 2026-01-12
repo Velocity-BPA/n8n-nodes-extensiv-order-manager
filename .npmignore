@@ -1,0 +1,29 @@
+# Source files (only dist is needed)
+nodes/
+credentials/
+test/
+scripts/
+
+# Config files
+.eslintrc.js
+.prettierrc
+tsconfig.json
+jest.config.js
+
+# IDE
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitignore
+
+# Documentation (README is included)
+COMMERCIAL_LICENSE.md
+LICENSING_FAQ.md
+
+# Development
+*.log
+coverage/
+.env*
+*.tsbuildinfo

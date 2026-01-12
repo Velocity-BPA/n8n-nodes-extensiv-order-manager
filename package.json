@@ -1,0 +1,81 @@
+{
+  "name": "n8n-nodes-extensiv-order-manager",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Extensiv Order Manager (formerly Skubana) providing 12 resources and 80+ operations for e-commerce order management, inventory synchronization, and fulfillment automation.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-extensiv-order-manager.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-extensiv-order-manager#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-extensiv-order-manager/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "extensiv",
+    "skubana",
+    "order-manager",
+    "e-commerce",
+    "inventory",
+    "fulfillment",
+    "multi-channel",
+    "order-management",
+    "warehouse",
+    "3pl"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ExtensivOrderManagerOAuth2Api.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/ExtensivOrderManager/ExtensivOrderManager.node.js",
+      "dist/nodes/ExtensivOrderManager/ExtensivOrderManagerTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && npm run copy:icons",
+    "copy:icons": "mkdir -p dist/nodes/ExtensivOrderManager && cp nodes/ExtensivOrderManager/*.svg dist/nodes/ExtensivOrderManager/ 2>/dev/null || true",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.22.0",
+    "prettier": "^3.2.4",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
